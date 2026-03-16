@@ -24,7 +24,7 @@
 
 #echo "$var is the value and $var3 is default zero"
 
-var=("sit","stand",0,1)
+var=("sit","stand","one","two")
 
 #echo "${var5[@]}"
 
@@ -32,6 +32,10 @@ echo "${var[@]}"
 
 echo "${var[1]}"
 
+var1=(ilo,ve,you)
 
+echo "${var[@]}"
+
+echo "${var[1]}"
 
 
