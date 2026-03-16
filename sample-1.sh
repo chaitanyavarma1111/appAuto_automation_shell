@@ -28,6 +28,8 @@ var=("sit","stand",0,1)
 
 #echo "${var5[@]}"
 
+echo "${var[@]}"
+
 echo "${var[1]}"
 
 
