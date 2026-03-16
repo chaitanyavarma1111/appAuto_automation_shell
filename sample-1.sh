@@ -24,5 +24,12 @@ var=$(($var1+$var2+$var3))
 
 echo "$var is the value and $var3 is default zero"
 
+var4=("sit","stand",0,1)
+
+echo "${var5[@]}"
+
+echo "${var5[0]} and ${var5[1]} and ${var5[2]} and ${var5[3]}"
+
+
 
 
