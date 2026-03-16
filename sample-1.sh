@@ -20,7 +20,7 @@ echo "$$ is Process instance id"
 
 var3="string"
 
-var=$($var1+$var2+$var3)
+var=$(($var1+$var2+$var3))
 
 echo "$var is the value and $var3 is default zero"
 
