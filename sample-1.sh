@@ -18,6 +18,8 @@ echo $HOME
 
 echo "$$ is Process instance id"
 
+grep "bash"
+
 var=$!
 
 echo "$var is process instance id of previous"
