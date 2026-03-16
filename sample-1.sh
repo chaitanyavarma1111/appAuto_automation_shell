@@ -34,8 +34,8 @@ echo "${var[1]}"
 
 var1=(ilo,ve,you)
 
-echo "${var[@]}"
+echo "${var1[@]}"
 
-echo "${var[1]}"
+echo "${var1[1]}"
 
 
