@@ -28,7 +28,7 @@ var4=("sit","stand",0,1)
 
 #echo "${var5[@]}"
 
-echo "${var4[0]}"
+echo "${var4[0] and var4[1] and var4[2]}"
 
 
 
