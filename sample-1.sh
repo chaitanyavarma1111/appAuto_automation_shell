@@ -24,11 +24,12 @@
 
 #echo "$var is the value and $var3 is default zero"
 
-var4=("sit","stand",0,1)
+var=("sit","stand",0,1)
 
 #echo "${var5[@]}"
 
-echo "${var4[0] and var4[1] and var4[2]}"
+echo "${var[1]}"
+
 
 
 
