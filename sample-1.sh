@@ -18,11 +18,11 @@ echo $HOME
 
 echo "$$ is Process instance id"
 
-grep "bash"
+var3="string"
 
-var=$!
+var=$($var1+$var2+$var3)
 
-echo "$var is process instance id of previous"
+echo "$var is the value and $var3 is default zero"
 
 
 
