@@ -18,7 +18,9 @@ echo $HOME
 
 echo "$$ is Process instance id"
 
-echo "$! is process instance id of previous"
+var=$!
+
+echo "$var is process instance id of previous"
 
 
 
