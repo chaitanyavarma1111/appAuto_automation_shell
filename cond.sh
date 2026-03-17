@@ -38,7 +38,7 @@
 
 echo $USER
 
-if [ $USER -eq "root" ]; then 
+if [ $USER -eq root ]; then 
 
     echo $? 
 
