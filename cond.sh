@@ -50,5 +50,25 @@ else
 fi
 
 
+if [ $USER - eq "root" ]; then 
+
+    echo "root"
+
+fi
+
+var=$?
+
+if [ $var -eq 0 ]; then 
+
+    exit 0
+else 
+
+    echo "script not executed successfuly"
+    exit 1
+
+fi 
+
+
+echo "script executed successfully"
 
 
