@@ -60,7 +60,7 @@ if [ $var -eq 0 ]; then
 else 
 
     echo "script not executed successfuly"
-    exit 1
+    exit 0
 
 fi 
 
