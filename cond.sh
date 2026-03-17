@@ -50,11 +50,7 @@ else
 fi
 
 
-if [ $USER -eq "root" ]; then 
-
-    echo "root"
-
-fi
+ls /etc/script
 
 var=$?
 
