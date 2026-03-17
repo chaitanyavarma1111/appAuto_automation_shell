@@ -10,6 +10,8 @@ echo "enter the speed and road type"
 var1=$1 
 var2=$2
 
+fun(){
+
 if [ $var2 = "H" ] && [ $var1 -lt 100 ]; then 
     echo -e "you are $G good $N"
 elif [ $var2 = "H" ] && [ $var1 -gt 100 ]; then
@@ -19,6 +21,8 @@ elif [ $var2 = "G" ] && [ $var1 -gt 100 ]; then
 else
     echo -e "Thanks for following rule $Y enjoy your trip $N"
 fi
+}
 
+fun $var1 $var2
 
     
