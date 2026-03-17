@@ -15,7 +15,7 @@ echo "value of var3 and var4"
 read var3
 read -s var4
 
-if($(($var3 % var4)) - gt 10); then 
+if($(($var3 % $var4)) - gt 10); then 
 
     echo "value is higher"
 
