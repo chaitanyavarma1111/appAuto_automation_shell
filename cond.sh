@@ -50,7 +50,7 @@ else
 fi
 
 
-ls /etc/script
+ls -lrt
 
 var=$?
 
