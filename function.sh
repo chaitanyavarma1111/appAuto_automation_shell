@@ -12,9 +12,9 @@ var2=$2
 
 if [ $var2 = "H" ] && [ $var1 -lt 100 ]; then 
     echo -e "you are $G good $N"
-elif [ $var2 = "H"] && [ $var1 -gt 100 ]; then
+elif [ $var2 = "H" ] && [ $var1 -gt 100 ]; then
     echo -e "you are $R not at good speed $N keep it less then 100 for $Y orange for sometime $N"
-elif [ $var2 = "G"] && [ $var1 -gt 100 ]; then
+elif [ $var2 = "G" ] && [ $var1 -gt 100 ]; then
     echo -e "kindly stop your vehicle for while and give $Y cool start $N"
 else
     echo -e "Thanks for following rule $Y enjoy your trip $N"
