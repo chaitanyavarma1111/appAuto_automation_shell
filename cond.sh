@@ -50,7 +50,7 @@ else
 fi
 
 
-if [ $USER - eq "root" ]; then 
+if [ $USER -eq "root" ]; then 
 
     echo "root"
 
