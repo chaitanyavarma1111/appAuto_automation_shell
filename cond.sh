@@ -36,6 +36,8 @@
 
 # echo "value of $var1 and $var2"
 
+echo $USER
+
 if [ $USER -eq "root" ]; then 
 
     echo $? 
