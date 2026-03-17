@@ -7,7 +7,7 @@ N="\e[0m"
 
 echo "enter the speed and road type"
 
-logfile=$(echo $0 | cut -d "." f1)
+logfile=$(echo $0 | cut -d "." -f1)
 
 scriptname="$logfile.log"
 
