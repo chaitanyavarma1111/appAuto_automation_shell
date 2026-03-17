@@ -38,9 +38,10 @@
 
 echo $USER
 
-if [ ($USER) -eq "root" ]; then 
+if [ $USER = "root" ]; then 
 
     echo $? 
+    echo "$USER" 
 
 else
 
