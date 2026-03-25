@@ -26,17 +26,16 @@ do
     --change-batch '
     {
         "Comment" : "dns record update"
-        ,"Changes":[{
-            "Action" : "UPSERT"
-            ,"ResourceRecordSet":{
-                "Name" : "'$record_name'"
-                ,"Type" : "A"
-                ,"TTL" : 1
-                ,"ResourceRecords" : [{
-                    "value" : "'$IP'"
-                }]
-                }
-            }
+        ,"Changes": [{
+        "Action" : "UPSERT"
+        ,"ResourceRecordSet" : {
+            "Name" : "'$record_name'"
+            ,"Type" : "A"
+            ,"TTL" : 1
+            ,"ResourceRecords" : [{
+                "value" : "'$IP'"
+            }]
+        }
         }]
     }
     '
