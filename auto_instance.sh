@@ -1,0 +1,44 @@
+#! /bin/bash
+
+AMI_ID="ami-0220d79f3f480ecf5"
+SG_ID="sg-0d65ce3293312c4fc"
+Host_zone="Z05398341DY1M46G62WSX"
+DOMAIN="chaitanya.cloud"
+
+
+for instance in $@
+do
+
+    ins_id=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --security-group-ids $SG_ID --tag-specification "ResourceType=instance,Tags=[{Key=Name,Value=$ins}]" --query 'Instance0].InstanceId' --output text)
+
+    if [ $instance == "frontend" ]; then
+        IP=$(aws ec2 describe-instance --instance-ids $ins_id --query 'Reservations[0].Instance[0].PublicIpAddress' --output text)
+        record_name="$DOMAIN"
+    else
+        IP=$(aws ec2 describe-instance --instance-ids $ins_id --query 'Reservations[0].Instance[0].PrivateIpAddress' --output text)
+        record_name="$instance.$DOMAIN"
+    fi
+
+    aws route53 change-resource-record-sets
+    --hosted-zone-id $Host_zone
+    --change-batch '
+    {
+        "Comment" : "dns record update"
+        ,"Changes":[{
+            "Action" : "UPSERT"
+            ,"ResourceRecordSet":{
+                "Name" : "'$record_name'"
+                ,"Type" : "A"
+                ,"TTL" : 1
+                ,"Resource Records" : [{
+                    "value" : "'$IP'"
+                }]
+                }
+            }
+        }]
+    }
+
+    echo " $instance : $IP and DNS: $record_name"
+
+done
+
