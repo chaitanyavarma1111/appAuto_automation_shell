@@ -19,6 +19,8 @@ do
         record_name="$instance.$DOMAIN"
     fi
 
+    echo "$IP" 
+
     aws route53 change-resource-record-sets
     --hosted-zone-id $Host_zone
     --change-batch '
