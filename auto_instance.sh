@@ -19,21 +19,21 @@ do
         record_name="$instance.$DOMAIN"
     fi
 
-    echo "$IP" 
+    echo "$IP and $record_name" 
 
     aws route53 change-resource-record-sets \
     --hosted-zone-id $Host_zone \
     --change-batch '
     {
-        "Comment" : "dns record update"
+        "Comment": "dns record update"
         ,"Changes": [{
-        "Action" : "UPSERT"
+        "Action"             : "UPSERT"
         ,"ResourceRecordSet" : {
-            "Name" : "'$record_name'"
-            ,"Type" : "A"
-            ,"TTL" : 1
-            ,"ResourceRecords" : [{
-                "value" : "'$IP'"
+            "Name"              : "'$record_name'"
+            ,"Type"             : "A"
+            ,"TTL"              : 1
+            ,"ResourceRecords"  : [{
+                "value"         : "'$IP'"
             }]
         }
         }]
