@@ -12,10 +12,10 @@ do
     ins_id=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --security-group-ids $SG_ID --tag-specification "ResourceType=instance,Tags=[{Key=Name,Value=$ins}]" --query 'Instance[0].InstanceId' --output text)
 
     if [ $instance == "frontend" ]; then
-        IP=$(aws ec2 describe-instance --instance-ids $ins_id --query 'Reservations[0].Instance[0].PublicIpAddress' --output text)
+        IP=$(aws ec2 describe-instance --instance-ids $ins_id --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
         record_name="$DOMAIN"
     else
-        IP=$(aws ec2 describe-instance --instance-ids $ins_id --query 'Reservations[0].Instance[0].PrivateIpAddress' --output text)
+        IP=$(aws ec2 describe-instance --instance-ids $ins_id --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text)
         record_name="$instance.$DOMAIN"
     fi
 
