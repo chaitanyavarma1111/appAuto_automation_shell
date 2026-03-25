@@ -30,13 +30,14 @@ do
                 "Name" : "'$record_name'"
                 ,"Type" : "A"
                 ,"TTL" : 1
-                ,"Resource Records" : [{
+                ,"ResourceRecords" : [{
                     "value" : "'$IP'"
                 }]
                 }
             }
         }]
     }
+    '
 
     echo " $instance : $IP and DNS: $record_name"
 
