@@ -21,8 +21,8 @@ do
 
     echo "$IP" 
 
-    aws route53 change-resource-record-sets
-    --hosted-zone-id $Host_zone
+    aws route53 change-resource-record-sets \
+    --hosted-zone-id $Host_zone \
     --change-batch '
     {
         "Comment" : "dns record update"
