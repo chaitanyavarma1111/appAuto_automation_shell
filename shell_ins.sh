@@ -32,7 +32,7 @@ echo $PWD
 echo "$? is the status"
 echo $HOME
 echo "$? is the status"
-echo $CPU
+echo $(df -h)
 echo "$? is the status"
 
 
