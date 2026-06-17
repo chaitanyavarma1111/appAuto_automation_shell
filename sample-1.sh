@@ -40,7 +40,7 @@ var1=(ilo ve you)
 #echo "${var1[1]}"
 
 echo "${var1[@]}"   # prints: ilo ve you
-echo "${var1[0]}"   # prints: ve
+echo "${var1[1]}"   # prints: ilo
 
 
 
