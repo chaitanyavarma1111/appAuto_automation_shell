@@ -25,20 +25,23 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
+mkdir -p "/var/log"
 
+
+$logfile="/var/log/Shell-script.txt"
 
 var=$(id -u)
 
-echo $var
-echo "$? is the status"
-echo $USER
-echo "$? is the status"
-echo $PWD
-echo "$? is the status"
-echo $HOME
-echo "$? is the status"
-echo $(df -h)
-echo "$? is the status"
+echo $var &>> $logfile
+echo "$? is the status" &>> $logfile
+echo $USER &>> $logfile
+echo "$? is the status" &>> $logfile
+echo $PWD &>> $logfile
+echo "$? is the status" &>> $logfile
+echo $HOME &>> $logfile
+echo "$? is the status" &>> $logfile
+echo $(df -h) &>> $logfile
+echo "$? is the status" &>> $logfile
 
 if [ $? -eq 0 ]; then
     echo -e "$R All the details are updated as paer the requirements $N"
