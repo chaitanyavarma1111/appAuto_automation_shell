@@ -21,6 +21,11 @@
 #     echo "value is less then 50"
 # fi
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
+
 
 var=$(id -u)
 
@@ -35,6 +40,10 @@ echo "$? is the status"
 echo $(df -h)
 echo "$? is the status"
 
+if [ $? eq 0 ]; then
+    echo -e "$R All the details are updated as paer the requirements $N"
+    echo "Values are 
+fi
 
 
 
