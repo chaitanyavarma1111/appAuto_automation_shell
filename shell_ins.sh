@@ -40,7 +40,7 @@ echo "$? is the status"
 echo $(df -h)
 echo "$? is the status"
 
-if [ $? eq 0 ]; then
+if [ $? -eq 0 ]; then
     echo -e "$R All the details are updated as paer the requirements $N"
     echo -e "$G Values are update in colurs $N"
 fi
