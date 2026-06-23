@@ -42,7 +42,7 @@ echo "$? is the status"
 
 if [ $? eq 0 ]; then
     echo -e "$R All the details are updated as paer the requirements $N"
-    echo "Values are 
+    echo -e "$G Values are update in colurs $N"
 fi
 
 
