@@ -25,10 +25,10 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-mkdir -p "/var/log"
+mkdir -p "/home/ec2-user/logs_shell"
 
 
-$logfile="/var/log/Shell-script.txt"
+$logfile="/home/ec2-user/logs_shell/Shell-script.txt"
 
 var=$(id -u)
 
