@@ -25,23 +25,23 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-mkdir -p "/home/ec2-user/logs_shell"
+mkdir -p "/var/log/shell-script"
 
 
-$logfile="/home/ec2-user/logs_shell/Shell-script.txt"
+$logfile="/var/log/shell-script/Shellscript.txt"
 
 var=$(id -u)
 
 echo $var &>> $logfile
-echo "$? is the status" &>> $logfile
+echo "$? is the status" &>>$logfile
 echo $USER &>> $logfile
-echo "$? is the status" &>> $logfile
+echo "$? is the status" &>>$logfile
 echo $PWD &>> $logfile
-echo "$? is the status" &>> $logfile
+echo "$? is the status" &>>$logfile
 echo $HOME &>> $logfile
-echo "$? is the status" &>> $logfile
+echo "$? is the status" &>>$logfile
 echo $(df -h) &>> $logfile
-echo "$? is the status" &>> $logfile
+echo "$? is the status" &>>$logfile
 
 if [ $? -eq 0 ]; then
     echo -e "$R All the details are updated as paer the requirements $N"
