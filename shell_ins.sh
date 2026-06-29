@@ -58,7 +58,8 @@ do
     if [ "$i" -eq 10 ]; then
         echo $i   
         echo "The number is 10"
-        exit 0
+        # exit 0
+        break
     fi 
 done
 
