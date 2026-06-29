@@ -53,6 +53,14 @@ if [ $? -eq 0 ]; then
 fi
 
 
+for i in {1..20}
+do
+    if [ i -eq 10 ]; then   
+        echo "The number is 10"
+        exit 0
+    fi 
+done
+
 
 
 
