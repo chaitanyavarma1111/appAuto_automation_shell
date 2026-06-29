@@ -68,13 +68,13 @@ var1=$1
 echo "enter the value of name"
 read -s var2
 
-read -s var3
+#read -s var3
 
 
 fun $var1 $var2
 
 fun(){
-    echo "value of $var3" 
+   # echo "value of $var3" 
     echo "The value of the user is $var1 and name is $var2"
     
     echo -e "$G Learn how to break the loop $N" &>>$logUpdate
