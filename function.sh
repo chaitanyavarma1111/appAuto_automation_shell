@@ -38,8 +38,8 @@ fun $var1 $var2
 
 for i in {1..100}
 do 
-    echo $i
-    if [ $i -gt 10 ]; then 
+    echo i
+    if [ i -gt 10 ]; then 
         exit 0
     fi
 done
