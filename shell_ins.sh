@@ -55,7 +55,8 @@ fi
 
 for i in {1..20}
 do
-    if [ i -eq 10 ]; then   
+    if [ "$i" -eq 10 ]; then
+        echo $i   
         echo "The number is 10"
         exit 0
     fi 
