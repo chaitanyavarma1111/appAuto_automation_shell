@@ -1,8 +1,8 @@
 #! /bin/bash
 
 AMI_ID="ami-0220d79f3f480ecf5"
-SG_ID="sg-0d65ce3293312c4fc"
-Host_zone="Z05398341DY1M46G62WSX"
+SG_ID="sg-0e666d7f562b38f77"
+Host_zone="Z08476451TDILC85YWXQP"
 DOMAIN="chaitanya.cloud"
 
 
