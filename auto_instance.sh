@@ -42,5 +42,7 @@ do
 
     echo " $instance : $IP and DNS: $record_name"
 
+    echo "Instance created successfully"
+
 done
 
