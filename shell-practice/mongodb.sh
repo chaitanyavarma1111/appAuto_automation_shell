@@ -22,11 +22,11 @@ fi
 
 VALIDATE(){
 
-    if [ $1 -eq 0 ]; then 
-        echo -e "$2 is $R is failure $N" | tee -a $LOG_FILE
+    if [ $1 -ne 0 ]; then 
+        echo -e "$2 is $R failure $N" | tee -a $LOG_FILE
         exit 1
     else
-        echo -e "$2 is $G is successful $N" | tee -a $LOG_FILE
+        echo -e "$2 is $G successful $N" | tee -a $LOG_FILE
     fi
 }
 
