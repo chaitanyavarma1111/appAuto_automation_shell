@@ -1,11 +1,11 @@
 #! /bin/bash
 
+USERID=$(id -u)
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
-USERID=$(id -u)
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." f1)
@@ -23,10 +23,10 @@ fi
 VALIDATE(){
 
     if [ $1 -eq 0 ]; then 
-        echo "$2 is $R is failure $N" | tee -a $LOG_FILE
+        echo -e "$2 is $R is failure $N" | tee -a $LOG_FILE
         exit 1
     else
-        echo "$2 is $G is successful $N" | tee -a $LOG_FILE
+        echo -e "$2 is $G is successful $N" | tee -a $LOG_FILE
     fi
 }
 
