@@ -67,7 +67,7 @@ cp -p $SCRIPT_PATH/mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 
-INDEX=$(mongosh mongodb.chaitanya.cloud --quiet --eval "db.get.Mongo().getDBNames().indexOf('catalogue')")
+INDEX=$(mongosh mongodb.chaitanya.cloud --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')")
 
 if [ $INDEX -le 0 ]; then 
     mongosh --host mongodb.chaitanya.cloud </app/db/master-data.js
