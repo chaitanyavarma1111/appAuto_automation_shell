@@ -1,10 +1,9 @@
 #! /bin/bash
 
 AMI_ID="ami-0220d79f3f480ecf5"
-SG_ID="sg-0e666d7f562b38f77"
+SG_ID="sg-0b28f6a65231f2934"
 Host_zone="Z08476451TDILC85YWXQP"
 DOMAIN="chaitanya.cloud"
-
 
 for instance in $@
 do
