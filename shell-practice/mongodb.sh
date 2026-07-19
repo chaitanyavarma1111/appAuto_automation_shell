@@ -42,18 +42,12 @@ VALIDATE $? "Enable Mongodb service"
 systemctl start mongod
 VALIDATE $? "Starting the Mongod service"
 
-sed 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 VALIDATE $? "Replacing the config file" 
 
-grep -i '0.0.0.0' /etc/mongod.conf | tee -a $LOG_FILE
 
 systemctl restart mongod
 VALIDATE $? "Restarting the service"
-
-pf -ef | grep mongod | tee -a $LOG_FILE
-
-netstat -lntp | tee -a $LOG_FILE
-VALIDATE $? "Vaidating the service
 
 
 
