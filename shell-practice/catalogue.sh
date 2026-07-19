@@ -24,32 +24,32 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi 
 
-trap 'echo "There is error in $LINENO and the command is $BASH_COMMAND" ' ERR &>>LOG_FILE
+trap 'echo "There is error in $LINENO and the command is $BASH_COMMAND" ' ERR &>>$LOG_FILE
 
 
-dnf module disable nodejs -y &>>LOG_FILE
-dnf module enable nodejs:20 -y &>>LOG_FILE
-dnf install nodejs -y &>>LOG_FILE
+dnf module disable nodejs -y &>>$LOG_FILE
+dnf module enable nodejs:20 -y &>>$LOG_FILE
+dnf install nodejs -y &>>$LOG_FILE
 
 echo -e "Installing Nodejs is $G Successful $N" | tee -a $LOG_FILE
 
-id roboshop &>>LOG_FILE
+id roboshop &>>$LOG_FILE
 if [ $? -ne 0 ]; then 
     useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop 
-    echo -e "User creation $G Successful $N" &>>LOG_FILE
+    echo -e "User creation $G Successful $N" &>>$LOG_FILE
 else
-    echo -e "User Already exist so $Y ...SKIPPING... $N" &>>LOG_FILE
+    echo -e "User Already exist so $Y ...SKIPPING... $N" &>>$LOG_FILE
 fi
 
 echo -e "User check in $G Successful $N" | tee -a $LOG_FILE
 
 mkdir -p /app
 
-curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>LOG_FILE
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$LOG_FILE
 cd /app
 rm -rf *
-unzip /tmp/catalogue.zip &>>LOG_FILE
-npm install &>>LOG_FILE
+unzip /tmp/catalogue.zip &>>$LOG_FILE
+npm install &>>$LOG_FILE
 
 echo -e "Instannling Catalogue application  $G Successful $N" | tee -a $LOG_FILE
 
@@ -64,7 +64,7 @@ echo -e "Installing the service is $G completed $N" | tee -a $LOG_FILE
 cp -p $SCRIPT_PATH/mongo.repo /etc/yum.repos.d/mongo.repo
 
 
-dnf install mongodb-mongosh -y &>>LOG_FILE
+dnf install mongodb-mongosh -y &>>$LOG_FILE
 
 INDEX=$(mongosh mongodb.chaitanya.cloud --quiet --eval "db.get.Mongo().getDBNames().indexOf('catalogue')")
 
