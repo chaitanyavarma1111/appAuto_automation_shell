@@ -39,7 +39,5 @@ do
     }
     '
 
-    echo " $instance : $IP and DNS: $record_name"
-
 done
 
