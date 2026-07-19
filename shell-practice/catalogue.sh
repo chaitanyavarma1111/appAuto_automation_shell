@@ -33,8 +33,9 @@ dnf install nodejs -y &>>$LOG_FILE
 
 echo -e "Installing Nodejs is $G Successful $N" | tee -a $LOG_FILE
 
-id roboshop &>>$LOG_FILE
-if [ $? -ne 0 ]; then 
+user_robo=$(id roboshop)
+
+if [ $user_robo -ne 0 ]; then 
     useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop 
     echo -e "User creation $G Successful $N" &>>$LOG_FILE
 else
