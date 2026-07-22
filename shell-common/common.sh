@@ -36,9 +36,9 @@ user_check(){
 
 app_setup(){
 
-    user_robo=$(id roboshop)
+    id roboshop &>>LOG_FILE
 
-    if [ $user_robo -ne 0 ]; then 
+    if [ $? -ne 0 ]; then 
         useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop 
         echo -e "User creation $G Successful $N" &>>$LOG_FILE
     else
