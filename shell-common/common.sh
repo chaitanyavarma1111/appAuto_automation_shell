@@ -11,6 +11,11 @@ CATALOGUE_HOST=catalogue.chaitanya.cloud
 REDIS_HOST=redis.chaitanya.cloud 
 USER_HOST=user.chaitanya.cloud
 CART_HOST=cart.chaitanya.cloud
+MYSQL_HOST=mysql.chaitanya.cloud
+SHIPPING_HOST=shipping.chaitanya.cloud
+RABBITMQ_HOST=rabbitmq.chaitanya.cloud
+PAYMENT_HOST=payment.chaitanya.cloud
+
 
 
 SCRIPT_PATH=$PWD
@@ -86,4 +91,25 @@ nodejs_setup(){
 
     npm install &>>$LOG_FILE
     VALIDATE $? "npm install"
+}
+
+java_setup(){
+    dnf install maven -y &>>$LOG_FILE
+    VALIDATE $? "Maven install" 
+
+    mvn clean package
+    VALIDATE $? "Maven package" 
+
+    mv target/$appname-1.0.jar $appname.jar
+    VALIDATE $? "$appname update"
+}
+
+python_setup(){
+
+        dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+        VALIDATE $? "python install"
+
+        pip3 install -r requirements.txt &>>$LOG_FILE
+        VALIDATE $? "Pip package" 
+       
 }
