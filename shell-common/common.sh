@@ -5,6 +5,10 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+#HOSTNAME
+MONGO_HOST=mongodb.chaitanya.cloud
+CATALOGUE_HOST=catalogue.chaitanya.cloud
+
 
 SCRIPT_PATH=$PWD
 
