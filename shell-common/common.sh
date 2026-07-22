@@ -36,7 +36,7 @@ user_check(){
 
 app_setup(){
     mkdir -p /app
-    curl -o /tmp/.zip https://roboshop-artifacts.s3.amazonaws.com/$appname-v3.zip &>>$LOG_FILE
+    curl -o /tmp/$appname.zip https://roboshop-artifacts.s3.amazonaws.com/$appname-v3.zip &>>$LOG_FILE
     cd /app
     rm -rf *
     unzip /tmp/$appname.zip &>>$LOG_FILE
