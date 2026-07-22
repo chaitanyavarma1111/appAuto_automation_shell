@@ -123,7 +123,7 @@ golang_setup(){
 
         go get &>>$LOG_FILE
         VALIDATE $? "golang get"
-        
+
         go build
-        VALIDATE $? Golang build"
+        VALIDATE $? "Golang build"
 }
