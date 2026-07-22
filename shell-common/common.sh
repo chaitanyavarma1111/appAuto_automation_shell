@@ -57,7 +57,7 @@ app_setup(){
     rm -rf *
     unzip /tmp/$appname.zip &>>$LOG_FILE
 
-    echo "App set-up completed $G Successful $N"
+    echo -e "App set-up completed $G Successful $N"
 }
 
 systemd_setup(){
