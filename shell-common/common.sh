@@ -10,6 +10,7 @@ MONGO_HOST=mongodb.chaitanya.cloud
 CATALOGUE_HOST=catalogue.chaitanya.cloud
 REDIS_HOST=redis.chaitanya.cloud 
 USER_HOST=user.chaitanya.cloud
+CART_HOST=cart.chaitanya.cloud
 
 
 SCRIPT_PATH=$PWD
