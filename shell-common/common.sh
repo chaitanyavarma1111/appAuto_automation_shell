@@ -8,6 +8,8 @@ N="\e[0m"
 #HOSTNAME
 MONGO_HOST=mongodb.chaitanya.cloud
 CATALOGUE_HOST=catalogue.chaitanya.cloud
+REDIS_HOST=redis.chaitanya.cloud 
+USER_HOST=user.chaitanya.cloud
 
 
 SCRIPT_PATH=$PWD
