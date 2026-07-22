@@ -113,3 +113,17 @@ python_setup(){
         VALIDATE $? "Pip package" 
        
 }
+
+golang_setup(){
+        dnf install golang -y &>>$LOG_FILE
+        VALIDATE $? "golang install"
+
+        go mod init dispatch &>>$LOG_FILE
+        VALIDATE $? "golang install"
+
+        go get &>>$LOG_FILE
+        VALIDATE $? "golang get"
+        
+        go build
+        VALIDATE $? Golang build"
+}
