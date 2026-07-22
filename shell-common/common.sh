@@ -35,6 +35,16 @@ user_check(){
 
 
 app_setup(){
+
+    user_robo=$(id roboshop)
+
+    if [ $user_robo -ne 0 ]; then 
+        useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop 
+        echo -e "User creation $G Successful $N" &>>$LOG_FILE
+    else
+        echo -e "User Already exist so $Y ...SKIPPING... $N" &>>$LOG_FILE
+    fi
+
     mkdir -p /app
     curl -o /tmp/$appname.zip https://roboshop-artifacts.s3.amazonaws.com/$appname-v3.zip &>>$LOG_FILE
     cd /app
