@@ -1,6 +1,7 @@
 #! /bin/bash
 
 DISK_STORAGE=$(df -hT | grep -v Filesystem)
+echo $DISK_STORAGE
 DISK_TRESHOLD=2
 
 IP_ADDRESS=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
