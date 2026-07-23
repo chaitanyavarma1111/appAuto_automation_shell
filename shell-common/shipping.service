@@ -4,8 +4,8 @@ Description=Shipping Service
 [Service]
 User=roboshop
 // highlight-start
-Environment=CART_ENDPOINT=<cart.chaitanya.cloud>:8080
-Environment=DB_HOST=<mysql.chaitanya.cloud>
+Environment=CART_ENDPOINT=cart.chaitanya.cloud:8080
+Environment=DB_HOST=mysql.chaitanya.cloud
 // highlight-end
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
