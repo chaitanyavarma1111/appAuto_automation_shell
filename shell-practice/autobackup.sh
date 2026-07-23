@@ -7,7 +7,8 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo "$0" | cut -d "." -f1)
-LOG_FILE="$LOGS_FOLDER/backup.$(date %+F-%+H%+M).log"
+time_stamp=$(date +%F-%H%M)
+LOG_FILE="$LOGS_FOLDER/backup.$time_stamp.log"
 
 mkdir -p "$LOGS_FOLDER"
 echo "Script Started execution at $(date)" | tee -a $LOG_FILE
@@ -26,15 +27,18 @@ DEST_DIR=$2
 DAYS=${3:-14}
 
 if [ $# -lt 2 ]; then 
-    echo -e "ERROR:: Please give the $R source and destinatio dir along with the script $N" &>>$LOG_FILE
+    echo -e "ERROR:: Please give the $R source and destinatio dir along with the script $N"
+    exit 1
 fi 
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo -e " The direction $SOURCE_DIR $R doesnot exist $N" &>>$LOG_FILE
+    echo -e " The direction $SOURCE_DIR $R doesnot exist $N"
+    exit 1
 fi 
 
 if [ ! -d $DEST_DIR ]; then 
-    echo -e " The direction $DEST_DIR $R doesnot exist $N" &>>$LOG_FILE
+    echo -e " The direction $DEST_DIR $R doesnot exist $N"
+    exit 1
 fi 
 
 echo $SOURCE_DIR
