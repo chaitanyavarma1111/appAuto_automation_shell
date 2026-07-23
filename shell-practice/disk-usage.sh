@@ -25,4 +25,6 @@ echo -e "Message is $MESSAGE"
 
 
 
-sh mail.sh "chaitanyacloud2001@gmail.com" "Disk Usage" "High Disk usage" "$MESSAGE" "Forward Dev Engg" "$IP_ADDRESS"
+#h mail.sh "chaitanyacloud2001@gmail.com" "Disk Usage" "High Disk usage" "$MESSAGE" "Forward Dev Engg" "$IP_ADDRESS"
+
+sh mail.sh "cvarma347@gmail.com" "Disk Usage" "High Disk usage" "$MESSAGE" "Forward Dev Engg" "$IP_ADDRESS"
