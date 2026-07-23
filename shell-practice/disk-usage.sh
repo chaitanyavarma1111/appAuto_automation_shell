@@ -14,7 +14,7 @@ do
     MOUNT_PATH=$(echo $diskusage | awk '{print $7}')
 
     if [ $DISK_PER -gt $DISK_TRESHOLD ]; then
-        MESSAGE+="The path is $MOUNT_PATH and space is $DISK_PER \n"
+        MESSAGE+="The path is $MOUNT_PATH and space is $DISK_PER <br>"
     fi 
 
 done <<< $DISK_STORAGE
@@ -25,3 +25,4 @@ echo -e "Message is $MESSAGE"
 
 
 
+sh mail.sh "chaitanyacloud2001@gmail.com" "Disk Usage" "High Disk usage" "$MESSAGE" "Forward Dev Engg" "$IP_ADDRESS"
