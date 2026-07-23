@@ -32,6 +32,6 @@ FIND_FILE=$(find $SOURCE_DIR -iname "*.log" -type f -mtime +10)
 while IFS=read -r filename 
 do
     echo "file to delete : $filename"
-    rm -rf $filename
+    rm -f $filename
 
 done <<< $FIND_FILE
