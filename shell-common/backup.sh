@@ -37,10 +37,16 @@ if [ ! -d $DEST_DIR ]; then
     echo -e " The direction $DEST_DIR $R doesnot exist $N" &>>$LOG_FILE
 fi 
 
+echo $SOURCE_DIR
+
+echo $DEST_DIR
+
+echo $DAYS
+
 
 FIND_FILE=$(find $SOURCE_DIR -type f -mtime +$DAYS)
 
-if [ ! -z $FIND_FILE ]; then 
+if [ ! -z "${FIND_FILE}" ]; then 
     echo "Files are available" 
     TIME_STAMP=$(date +%F-%H%M)
     ZIP_FILE_NAME="$DEST_DIR/app-log.$TIME_STAMP.zip"
